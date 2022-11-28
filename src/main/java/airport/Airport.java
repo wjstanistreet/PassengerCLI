@@ -19,18 +19,17 @@ public abstract class Airport implements ICancel {
     //Methods§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
 //Display Flight
-
- void displayFlight(){
-    System.out.println("These are the flights: " + availableFlights);
-}
+    void displayFlight(){
+        System.out.println("These are the flights: " + availableFlights);
+    }
 
 //Display Passenger
-void displayPassenger(){
-    System.out.println("These are the flights: " + currentPassengers);
-}
+    void displayPassenger(){
+        System.out.println("These are the flights: " + currentPassengers);
+    }
 
-//Add Passagener
-void removePassenger(Passenger passenger){
+//Add Passenger
+    void removePassenger(Passenger passenger){
         for (int i1 = 0; i1 <= currentPassengers.size(); i1++) {
 
             if (currentPassengers.get(i1) == passenger) {
@@ -43,15 +42,44 @@ void removePassenger(Passenger passenger){
 
             }
         }
-}
+    }
 
+    //Adding Flights
+    public void addFlights( Flight flight){
+        this.availableFlights.add(flight);
+    }
 
+    public void addPassenger(Passenger passenger){
+        this.currentPassengers.add(passenger);
+    }
 
+    //Removing flights
+    public void cancelFlight(Flight flight){
+        for (int i1 = 0; i1 <= availableFlights.size(); i1++) {
 
+            if (availableFlights.get(i1) == flight) {
+                availableFlights.remove(flight);
+                System.out.println("The flight has been removed");
 
+            } else {
+                System.out.println("This flight does not exist");
+            }
+        }
+    }
 
+    //Booking a flight
+    public void bookPassenger(Passenger passenger, Flight flight){
+        flight.getFlightPassengers().add(passenger);
+    }
 
+    public int countFlights(){
 
+        return this.availableFlights.size();
+    }
+
+    public int countPassengers(){
+        return this.currentPassengers.size();
+    }
 
 //Getters and Setters
     public String getAirportName() {
@@ -77,31 +105,4 @@ void removePassenger(Passenger passenger){
     public void setCurrentPassengers(ArrayList<Passenger> currentPassengers) {
         this.currentPassengers = currentPassengers;
     }
-
-    public int countFlights(){
-
-        return this.availableFlights.size();
-    }
-
-      public int countPassangers(){
-        
-        return this.currentPassengers.size();
-    }
-    
-    //Adding Flights
-
-public void addFlights( Flight flight){
-    this. availableFlights.add(flight);
-}
-
-public void addPassenger(Passenger passenger){
-    this.currentPassengers.add(passenger);
-}
-    
-
-
-    public void cancelFlight(){
-
-    }
-
 }
