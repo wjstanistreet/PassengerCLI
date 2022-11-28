@@ -2,7 +2,7 @@ package passenger;
 
 import airport.Airport;
 
-public class Passenger extends Airport{
+public class Passenger{
 
     private String name;
     private int contactInfo;

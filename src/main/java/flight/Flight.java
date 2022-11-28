@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Flight extends Airport {
+public class Flight{
     private String name;
     private String id;
     private ArrayList<Passenger> flightPassengers;

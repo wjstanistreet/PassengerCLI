@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public abstract class Airport implements ICancel {
 
 
-    private String airportName;
-    private ArrayList<Flight> availableFlights = new ArrayList<>();
-    protected ArrayList<Passenger> currentPassengers = new ArrayList<>();
+    private static String airportName;
+    private static ArrayList<Flight> availableFlights = new ArrayList<>();
+    private static ArrayList<Passenger> currentPassengers = new ArrayList<>();
 
     public Airport(String airportName){this.airportName = airportName;}
 
@@ -19,17 +19,17 @@ public abstract class Airport implements ICancel {
     //Methods§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
 //Display Flight
-    void displayFlight(){
+   public static void displayFlight(){
         System.out.println("These are the flights: " + availableFlights);
     }
 
 //Display Passenger
-    void displayPassenger(){
+    public static void displayPassenger(){
         System.out.println("These are the flights: " + currentPassengers);
     }
 
 //Add Passenger
-    void removePassenger(Passenger passenger){
+    public static void removePassenger(Passenger passenger){
         for (int i1 = 0; i1 <= currentPassengers.size(); i1++) {
 
             if (currentPassengers.get(i1) == passenger) {
@@ -45,16 +45,16 @@ public abstract class Airport implements ICancel {
     }
 
     //Adding Flights
-    public void addFlights( Flight flight){
-        this.availableFlights.add(flight);
+    public static void addFlights( Flight flight){
+        this.getAvailableFlights().add(flight);
     }
 
-    public void addPassenger(Passenger passenger){
+    public static void addPassenger(Passenger passenger){
         this.currentPassengers.add(passenger);
     }
 
     //Removing flights
-    public void cancelFlight(Flight flight){
+    public static void cancelFlight(Flight flight){
         for (int i1 = 0; i1 <= availableFlights.size(); i1++) {
 
             if (availableFlights.get(i1) == flight) {
@@ -68,7 +68,7 @@ public abstract class Airport implements ICancel {
     }
 
     //Booking a flight
-    public void bookPassenger(Passenger passenger, Flight flight){
+    public static void bookPassenger(Passenger passenger, Flight flight){
         flight.getFlightPassengers().add(passenger);
     }
 
