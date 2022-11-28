@@ -5,15 +5,16 @@ import passenger.Passenger;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Flight extends Airport {
     private String name;
     private String id;
     private ArrayList<Passenger> flightPassengers;
     private String planeId;
-    private LocalDate date;
+    private Date date;
 
-    public Flight(String name, String id, String planeId, LocalDate date){
+    public Flight(String name, String id, String planeId, Date date){
         this.name = name;
         this.id = id;
         this.planeId = planeId;
@@ -21,6 +22,14 @@ public class Flight extends Airport {
         this.flightPassengers = new ArrayList<>();
     }
 
+
+
+
+
+
+
+
+//Setters and Getters
     public String getName() {
         return name;
     }
@@ -53,11 +62,11 @@ public class Flight extends Airport {
         this.planeId = planeId;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }
