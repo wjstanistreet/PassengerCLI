@@ -10,7 +10,7 @@ public abstract class Airport implements ICancel {
 
     private String airportName;
     private ArrayList<Flight> availableFlights = new ArrayList<>();
-    private ArrayList<Passenger> currentPassengers = new ArrayList<>();
+    protected ArrayList<Passenger> currentPassengers = new ArrayList<>();
 
     public Airport(String airportName){this.airportName = airportName;}
 
@@ -18,6 +18,32 @@ public abstract class Airport implements ICancel {
 
     //Methods§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
+//Display Flight
+
+ void displayFlight(){
+    System.out.println("These are the flights: " + availableFlights);
+}
+
+//Display Passenger
+void displayPassenger(){
+    System.out.println("These are the flights: " + currentPassengers);
+}
+
+//Add Passagener
+void removePassenger(Passenger passenger){
+        for (int i1 = 0; i1 <= currentPassengers.size(); i1++) {
+
+            if (currentPassengers.get(i1) == passenger) {
+
+                currentPassengers.remove(passenger);
+                System.out.println("Your booking is no longer available");
+
+            } else {
+                System.out.println("This booking does not exist");
+
+            }
+        }
+}
 
 
 
