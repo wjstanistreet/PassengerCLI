@@ -19,9 +19,8 @@ public abstract class Airport implements ICancel {
     //Methods§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
 //Display Flight
-   public static void displayFlight(){
-        System.out.println("These are the flights: " + availableFlights);
-    }
+    public static void displayFlight(){
+        System.out.println("These are the flights: " + availableFlights);}
 
 //Display Passenger
     public static void displayPassenger(){
@@ -79,7 +78,6 @@ public abstract class Airport implements ICancel {
     // public void setAvailableFlights(ArrayList<Flight> availableFlights) {
     //     this.availableFlights = availableFlights;
     // }
-
 //    public ArrayList<Passenger> getCurrentPassengers() {
 //        return currentPassengers;
 //    }

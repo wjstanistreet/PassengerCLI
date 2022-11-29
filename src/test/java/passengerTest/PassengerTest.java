@@ -9,11 +9,10 @@ public class PassengerTest {
 
     Passenger passenger1;
 
-@BeforeEach
-public void setup(){
-
-            passenger1 = new Passenger("Ronaldo","Penaldo@gmail.com","CR7GOAT");
-}
+    @BeforeEach
+    public void setup(){
+        passenger1 = new Passenger("Ronaldo","Penaldo@gmail.com","CR7GOAT");
+    }
 
     @Test
     //Uni
@@ -26,18 +25,15 @@ public void setup(){
     }
 
     @Test
-
     public void contactInfo(){
         String expected = "Penaldo@gmail.com";
 
         String actual = passenger1.getContactInfo();
 
         assertEquals(expected,actual);
-
     }
 
     @Test
-
     public void passengerID(){
 
         String expected = "CR7GOAT";
@@ -46,8 +42,4 @@ public void setup(){
 
         assertEquals(expected,actual);
     }
-
-
-
-
 }

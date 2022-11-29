@@ -40,7 +40,7 @@ public class GateEnclosure extends Airport {
         System.out.println("These are the available flights: ");
         for (int i = 0; i < availableFlights.size(); i++) {
           Flight display = availableFlights.get(i);
-            System.out.println((i+1) + ": " + " Flight name " + display.getName());
+            System.out.println((i+1) + ". " + " Flight name: " + display.getName());
         }
     }
 
@@ -49,7 +49,7 @@ public class GateEnclosure extends Airport {
         System.out.println("These are the passengers: ");
         for (int i = 0; i < currentPassengers.size(); i++) {
             Passenger display = currentPassengers.get(i);
-            System.out.println((i+1) + ": " + " Passenger name " + currentPassengers.get(i).getName());
+            System.out.println((i+1) + ". " + " Passenger name: " + currentPassengers.get(i).getName());
         }
     }
 

@@ -1,10 +1,7 @@
 package flight;
 
-import airport.Airport;
-import interfacesPackage.ISum;
 import passenger.Passenger;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 

@@ -1,8 +1,5 @@
 package passenger;
 
-import airport.Airport;
-import interfacesPackage.ISum;
-
 public class Passenger {
 
     private String name;

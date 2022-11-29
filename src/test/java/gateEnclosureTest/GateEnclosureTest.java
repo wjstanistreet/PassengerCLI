@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GateEnclosureTest {
 
     Date currentDate = new Date();
-
-    public GateEnclosure gateEnclosure;
+    GateEnclosure gateEnclosure;
 
     @BeforeEach
-
     public void setup(){
         gateEnclosure = new GateEnclosure ("Gate 9","Changi Airport");
     }
@@ -58,7 +56,7 @@ public class GateEnclosureTest {
     @Test
 
     public void addPassenger(){
-         Passenger passenger1 = new Passenger("Ronaldo","0123456","CR7GOAT");
+        Passenger passenger1 = new Passenger("Ronaldo","0123456","CR7GOAT");
         Passenger passenger2 = new Passenger("Messi","809090","P5SSI");
         Passenger passenger3 = new Passenger("Nick Tron","00112233","L0L1230");
 
@@ -66,10 +64,10 @@ public class GateEnclosureTest {
         gateEnclosure.addPassenger(passenger1);
         gateEnclosure.addPassenger(passenger2);
 
- int expected = 2;
+        int expected = 2;
         int actual = gateEnclosure.countPassengers();
 
         assertEquals(expected, actual);
     }
-    }
+}
 

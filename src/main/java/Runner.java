@@ -24,21 +24,22 @@ public class Runner {
         Passenger passenger2 = new Passenger("Messi", "809090", "P5SSI");
         Passenger passenger3 = new Passenger("Mbappe", "00112233", "L0L1230");
 
-//§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ Scanner Input §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+        //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ Scanner Input §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
         Scanner scanner = new Scanner(System.in);
 
         // identifiers for Flight§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-        Flight flight1 = new Flight("Qatar airways", "QTR1231", "1234", currentDate);
-        Flight flight2 = new Flight("Singapore Airplines", "SG8800", "1069", currentDate);
-        Flight flight3 = new Flight("Air India", "IND6900", "9687", currentDate);
-        Flight flight4 = new Flight("Japan Airways", "JPN1200", "0316", currentDate);
+        Flight flight1 = new Flight("Qatar", "QTR1231", "1234", currentDate);
+        Flight flight2 = new Flight("Singapore", "SG8800", "1069", currentDate);
+        Flight flight3 = new Flight("Air", "IND6900", "9687", currentDate);
+        Flight flight4 = new Flight("Japan", "JPN1200", "0316", currentDate);
 
-// Add Flights
+        // Add Flights
+        gateEnclosure.addFlights(flight1);
         gateEnclosure.addFlights(flight2);
         gateEnclosure.addFlights(flight3);
         gateEnclosure.addFlights(flight4);
 
-//Add Passenger
+        //Add Passenger
         gateEnclosure.addPassenger(passenger1);
         gateEnclosure.addPassenger(passenger2);
         gateEnclosure.addPassenger(passenger3);
@@ -53,14 +54,11 @@ public class Runner {
 
 
         while (appInput != 10) {
-            Runner.option1(appInput);
+            Runner.optionControl(appInput);
             Runner.optionMenu();
             appInput = scanner.nextInt();
         }
         System.out.println("Thank you for using this app " + " https://st.depositphotos.com/1361798/3407/v/600/depositphotos_34076537-stock-illustration-airplane-symbol-design.jpg");
-
-
-
     }
 
 
@@ -78,15 +76,17 @@ public class Runner {
                 "10. Close app");
     }
 
-    public static void option1(Integer appInput) {
+    public static void optionControl(Integer appInput) {
         Flight tempFlight;
         if (appInput == 1) {
             gateEnclosure.displayPassenger();
 
-        } else if (appInput == 2) {
+        }
+        else if (appInput == 2) {
             gateEnclosure.displayFlight();
 
-        } else if (appInput == 3) {
+        }
+        else if (appInput == 3) {
             Passenger newPassenger = new Passenger();
             System.out.println("To add a new passenger, type the name of the passenger:");
             String name = scanner.nextLine();
@@ -101,8 +101,10 @@ public class Runner {
             newPassenger.setContactInfo(contactInfo);
             gateEnclosure.addPassenger(newPassenger);
             System.out.println("Added passenger successfully");
+            System.out.println("§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
 
-        } else if (appInput == 4) {
+        }
+        else if (appInput == 4) {
             Flight newFlight = new Flight();
             System.out.println("To add a new flight, type the name of the flight:");
             String name = scanner.nextLine();
@@ -118,8 +120,8 @@ public class Runner {
 
             gateEnclosure.addFlights(newFlight);
             System.out.println("Added flight successfully");
+            System.out.println("§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
         }
-
         else if (appInput == 5) {
 
             System.out.println("§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
@@ -146,13 +148,14 @@ public class Runner {
 
                     System.out.println("You have selected " + bookPassenger.getName() + " on " + tempFlight.getName());
                     System.out.println("§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
-                } else System.out.println("Passenger does not Exist");
-
-
+                } else {
+                    System.out.println("Passenger does not Exist");
+                }
             } else {
                 System.out.println("Your flight does not exist");
             }
-        } else if (appInput == 6) {
+        }
+        else if (appInput == 6) {
             System.out.println("§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
             System.out.println("Select the flight you want to cancel");
             GateEnclosure.displayFlight();
@@ -161,14 +164,13 @@ public class Runner {
 
             if (rmFlightInput <= gateEnclosure.countFlights()) {
                 rmFlight = gateEnclosure.getAvailableFlights().remove(rmFlightInput - 1);
-                System.out.println("You have Selected :" + rmFlight.getName() + " to be cancelled");
+                System.out.println("You have selected the flight to " + rmFlight.getName() + " to be cancelled");
                 System.out.println("§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
             } else {
                 System.out.println("Your flight does not exist");
             }
         }
-
-//Cancel Remove passenger from flight
+        //Cancel Remove passenger from flight
         else if (appInput == 7) {
             System.out.println("§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
 
@@ -194,17 +196,21 @@ public class Runner {
 
                     System.out.println("You have selected " + rmPassenger.getName() + " to be removed from " + tempFlight.getName());
                     System.out.println("§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
-                } else System.out.println("Passenger does not Exist");
+                } else {
+                    System.out.println("Passenger does not Exist");
+                }
             }
-
-
-        } else if (appInput == 8) {
+        }
+        else if (appInput == 8) {
 
             System.out.println("These are the number of flights departing at " + gateEnclosure.getGateName() + ": " + gateEnclosure.countFlights());
+            System.out.println("§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
 
-        } else if (appInput == 9) {
+        }
+        else if (appInput == 9) {
 
             System.out.println("These are the number of passengers departing at " + gateEnclosure.getGateName() + ": " + gateEnclosure.countPassengers());
+            System.out.println("§§§§§§§§§§§§§§§§§§§§§§§§§§§§");
 
         }
     }
