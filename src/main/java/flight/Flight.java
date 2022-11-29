@@ -11,7 +11,7 @@ import java.util.Date;
 public class Flight{
     private String name;
     private String id;
-    private ArrayList<Passenger> flightPassengers;
+    private ArrayList<Passenger> flightPassengers = new ArrayList<>();
     private String planeId;
     private Date date;
 
@@ -23,8 +23,18 @@ public class Flight{
         this.flightPassengers = new ArrayList<>();
     }
 
-    
+    public Flight(){
 
+    }
+
+
+    public void displayFlightPassenger(){
+        System.out.println("These are the passengers on this flight: ");
+        for (int i = 0; i < this.flightPassengers.size(); i++) {
+            Passenger display = this.flightPassengers.get(i);
+            System.out.println((i+1) + ": " + " Passenger name " + this.flightPassengers.get(i).getName());
+        }
+    }
 
 
 //Setters and Getters

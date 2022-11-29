@@ -9,8 +9,8 @@ public abstract class Airport implements ICancel {
 
 
     private static String airportName;
-    private static ArrayList<Flight> availableFlights = new ArrayList<>();
-    private static ArrayList<Passenger> currentPassengers = new ArrayList<>();
+    private static ArrayList<Flight> availableFlights;
+    private static ArrayList<Passenger> currentPassengers;
 
     public Airport(String airportName){this.airportName = airportName;}
 
@@ -44,15 +44,6 @@ public abstract class Airport implements ICancel {
         }
     }
 
-    //Adding Flights
-    public static void addFlights( Flight flight){
-        availableFlights.add(flight);
-    }
-
-    public static void addPassenger(Passenger passenger){
-        currentPassengers.add(passenger);
-    }
-
     //Removing flights
     public static void cancelFlight(Flight flight){
         for (int i1 = 0; i1 <= availableFlights.size(); i1++) {
@@ -72,15 +63,6 @@ public abstract class Airport implements ICancel {
         flight.getFlightPassengers().add(passenger);
     }
 
-    public int countFlights(){
-
-        return availableFlights.size();
-    }
-
-    public int countPassengers(){
-        return currentPassengers.size();
-    }
-
 //Getters and Setters
     public String getAirportName() {
         return airportName;
@@ -90,19 +72,19 @@ public abstract class Airport implements ICancel {
         this.airportName = airportName;
     }
 
-    public ArrayList<Flight> getAvailableFlights() {
-        return availableFlights;
-    }
+    // public ArrayList<Flight> getAvailableFlights() {
+    //     return availableFlights;
+    // }
 
-    public void setAvailableFlights(ArrayList<Flight> availableFlights) {
-        this.availableFlights = availableFlights;
-    }
+    // public void setAvailableFlights(ArrayList<Flight> availableFlights) {
+    //     this.availableFlights = availableFlights;
+    // }
 
-    public ArrayList<Passenger> getCurrentPassengers() {
-        return currentPassengers;
-    }
-
-    public void setCurrentPassengers(ArrayList<Passenger> currentPassengers) {
-        this.currentPassengers = currentPassengers;
-    }
+//    public ArrayList<Passenger> getCurrentPassengers() {
+//        return currentPassengers;
+//    }
+//
+//    public void setCurrentPassengers(ArrayList<Passenger> currentPassengers) {
+//        this.currentPassengers = currentPassengers;
+//    }
 }
