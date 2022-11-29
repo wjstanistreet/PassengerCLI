@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import passenger.Passenger;
 import airport.Airport;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -68,6 +69,27 @@ public class GateEnclosureTest {
         int actual = gateEnclosure.countPassengers();
 
         assertEquals(expected, actual);
+    }
+
+    @Test
+
+    public void displayFlights(){
+        ArrayList expected = gateEnclosure.getAvailableFlights();
+
+        ArrayList actual = gateEnclosure.getAvailableFlights();
+
+        assertEquals(expected, actual);
+
+    }
+
+    public void displayPassenger(){
+
+        ArrayList expected = gateEnclosure.getCurrentPassengers();
+
+        ArrayList actual = gateEnclosure.getCurrentPassengers();
+
+        assertEquals(expected, actual);
+
     }
 }
 

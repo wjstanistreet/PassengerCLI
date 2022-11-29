@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class GateEnclosure extends Airport {
 
+    //Added collections to accumulate flights
     private String gateName;
     private static ArrayList<Flight> availableFlights = new ArrayList<>();
     private static ArrayList<Passenger> currentPassengers = new ArrayList<>();

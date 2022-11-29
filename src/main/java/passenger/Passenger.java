@@ -13,7 +13,7 @@ public class Passenger {
     }
 
     public Passenger(){
-
+        //empty constructor to add user inputs
     }
 
     public String getName() {
