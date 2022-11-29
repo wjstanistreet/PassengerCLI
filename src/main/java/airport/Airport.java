@@ -1,6 +1,6 @@
 package airport;
 import flight.Flight;
-import icancel.ICancel;
+import interfacesPackage.ICancel;
 import passenger.Passenger;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public abstract class Airport implements ICancel {
 
 //Display Passenger
     public static void displayPassenger(){
-        System.out.println("These are the flights: " + currentPassengers);
+        System.out.println("These are the passengers: " + currentPassengers);
     }
 
 //Add Passenger
@@ -46,11 +46,11 @@ public abstract class Airport implements ICancel {
 
     //Adding Flights
     public static void addFlights( Flight flight){
-        this.getAvailableFlights().add(flight);
+        availableFlights.add(flight);
     }
 
     public static void addPassenger(Passenger passenger){
-        this.currentPassengers.add(passenger);
+        currentPassengers.add(passenger);
     }
 
     //Removing flights
@@ -74,11 +74,11 @@ public abstract class Airport implements ICancel {
 
     public int countFlights(){
 
-        return this.availableFlights.size();
+        return availableFlights.size();
     }
 
     public int countPassengers(){
-        return this.currentPassengers.size();
+        return currentPassengers.size();
     }
 
 //Getters and Setters

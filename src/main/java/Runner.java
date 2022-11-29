@@ -5,6 +5,9 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Runner {
+
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         //App Date
         Date currentDate = new Date();
@@ -17,7 +20,7 @@ public class Runner {
         Passenger passenger3 = new Passenger("Nick Tron",00112233,"L0L1230");
 
 //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ Scanner Input §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-        Scanner test = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // identifiers for Flight§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
         Flight flight1 = new Flight ("Qatar airways", "QTR1231", "1234", currentDate);
@@ -25,30 +28,23 @@ public class Runner {
         Flight flight3 = new Flight ("Air India", "IND6900", "9687", currentDate);
         Flight flight4 = new Flight ("Japan Airways", "JPN1200", "0316", currentDate);
 
+
+
         // Input init§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
         System.out.println("§§§§§§§§§§§§§§§ Welcome to the SUIII air §§§§§§§§§§§§§§§");
         Runner.optionMenu();
 
-        Integer appInput = test.nextInt();
+        Integer appInput = scanner.nextInt();
 
         //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
 
         while (appInput != 10){
-
+            Runner.option1(appInput);
             Runner.optionMenu();
-            appInput = test.nextInt();
+            appInput = scanner.nextInt();
         }
-
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -71,13 +67,30 @@ public class Runner {
                 "9. Count passengers" + "\n" +
                 "10. Close app");
     }
-        public static void option1(Integer appInput) {
-            if (appInput == '1'){
-                Airport.displayFlight();
-            }
+    public static void option1(Integer appInput) {
+        if (appInput == 1){
+            Airport.displayFlight();
+        } else if (appInput == 2) {
+            Airport.displayPassenger();
+        } else if (appInput == 3) {
+            Passenger newPassenger = new Passenger();
+            System.out.println("To add a new passenger, type the name of the passenger:");
+            String name = scanner.nextLine();
+            newPassenger.setName(name);
+
+            System.out.println("type the phone number of the passenger:");
+            int contactNumber = scanner.nextInt();
+            newPassenger.setContactInfo(contactNumber);
+
+            System.out.println("type the id of the passenger:");
+            String passID = scanner.nextLine();
+            newPassenger.setId(passID);
+
+            Runner.addPassenger(newPassenger);
 
         }
+    }
 }
-}
+
 
 

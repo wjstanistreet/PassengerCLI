@@ -1,8 +1,9 @@
 package passenger;
 
 import airport.Airport;
+import interfacesPackage.ISum;
 
-public class Passenger{
+public class Passenger {
 
     private String name;
     private int contactInfo;
@@ -12,6 +13,10 @@ public class Passenger{
         this.name = name;
         this.contactInfo = contactInfo;
         this.id = id;
+    }
+
+    public Passenger(){
+
     }
 
     public String getName() {
